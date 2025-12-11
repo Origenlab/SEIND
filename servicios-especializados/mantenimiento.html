@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mantenimiento Preventivo y Correctivo de Equipos de Seguridad Industrial - SEIND. Programas completos de mantenimiento, inspecciones periódicas y garantía de operatividad.">
+    <meta name="keywords" content="mantenimiento preventivo, mantenimiento correctivo, inspección equipos, calibración EPP, mantenimiento seguridad industrial">
+    <title>Mantenimiento Preventivo y Correctivo | SEIND</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/avif" href="../assets/images/logo.avif">
+    <link rel="alternate icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../assets/css/styles.css" as="style">
+</head>
+<body>
+    <!-- Header Component - SEIND -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="contact-info">
+                        <a href="tel:+525512345678" class="contact-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+52 55 1234 5678</span>
+                        </a>
+                        <a href="mailto:contacto@seind.com.mx" class="contact-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>contacto@seind.com.mx</span>
+                        </a>
+                    </div>
+                    <div class="header-actions">
+                        <a href="https://wa.me/5215512345678" target="_blank" class="btn-whatsapp">
+                            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="container">
+                <div class="nav-content">
+                    <a href="../index.html" class="logo">
+                        <img src="../assets/images/logo.avif" alt="SEIND - Seguridad Industrial" class="logo-image">
+                    </a>
+
+                    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="nav-menu" id="navMenu">
+                        <li class="has-dropdown">
+                            <a href="../productos.html">Productos</a>
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                            <ul class="dropdown-menu">
+                                <li><a href="../productos/proteccion-personal.html">Protección Personal (EPP)</a></li>
+                                <li><a href="../productos/prevencion-caidas.html">Prevención de Caídas</a></li>
+                                <li><a href="../productos/senalizacion.html">Señalización</a></li>
+                                <li><a href="../productos/contra-incendios.html">Equipos Contra Incendios</a></li>
+                                <li><a href="../productos/soluciones-tecnologicas.html">Soluciones Tecnológicas</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="../servicios.html">Servicios</a>
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                            <ul class="dropdown-menu">
+                                <li><a href="../servicios/proteccion-personal.html">Protección Personal</a></li>
+                                <li><a href="../servicios/prevencion-caidas.html">Prevención de Caídas</a></li>
+                                <li><a href="../servicios/senalizacion.html">Señalización Industrial</a></li>
+                                <li><a href="../servicios/equipos-contra-incendios.html">Equipos Contra Incendios</a></li>
+                                <li><a href="../servicios/soluciones-tecnologicas.html">Soluciones Tecnológicas</a></li>
+                                <li><a href="../servicios/servicios-profesionales.html">Servicios Profesionales</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="../servicios-especializados.html" class="active">Servicios Especializados</a>
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                            <ul class="dropdown-menu">
+                                <li><a href="asesoria.html">Asesoría en Seguridad</a></li>
+                                <li><a href="capacitacion.html">Capacitación</a></li>
+                                <li><a href="mantenimiento.html" class="active">Mantenimiento</a></li>
+                                <li><a href="instalacion.html">Instalación</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../nosotros.html">Nosotros</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-two-columns">
+                    <!-- Columna 1: Mensaje Principal -->
+                    <div class="hero-column-left">
+                        <h1 class="hero-title">Mantenimiento Preventivo y Correctivo de Equipos</h1>
+                        <p class="hero-subtitle">
+                            Programas completos de mantenimiento que garantizan la operatividad y cumplimiento normativo de tus equipos de seguridad industrial.
+                        </p>
+                    </div>
+
+                    <!-- Columna 2: Introducción del Servicio -->
+                    <div class="hero-column-right">
+                        <h2 class="hero-intro-title">Protege tu Inversión con Mantenimiento Profesional</h2>
+                        <p class="hero-intro-text">
+                            En <strong>SEIND</strong> ofrecemos servicios especializados de mantenimiento preventivo y correctivo para todos los equipos de seguridad industrial. Nuestros técnicos certificados realizan inspecciones detalladas, calibraciones, reparaciones y pruebas de funcionamiento según las especificaciones del fabricante y normativas NOM-STPS vigentes.
+                        </p>
+                        <p class="hero-intro-text">
+                            Implementamos programas de mantenimiento programado que extienden la vida útil de tus equipos, reducen costos operativos y garantizan que tu personal cuente con equipamiento en óptimas condiciones en todo momento. Documentamos cada intervención con bitácoras y certificados de mantenimiento válidos ante inspecciones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">¿Necesitas mantener tus equipos en óptimas condiciones?</h2>
+                    <p class="cta-subtitle">
+                        Solicita una evaluación sin costo de tus equipos y recibe un plan de mantenimiento personalizado
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="../contacto.html" class="btn btn-secondary btn-lg">Solicitar Evaluación</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Breakdown Section -->
+        <section class="services-detail-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">¿Qué incluye nuestro servicio de mantenimiento?</h2>
+                    <p class="section-subtitle">Soluciones completas para el cuidado de tus equipos de seguridad</p>
+                </div>
+
+                <!-- Service Detail Item 1 -->
+                <div class="service-detail-item">
+                    <div class="service-detail-content">
+                        <div class="service-detail-number">01</div>
+                        <div class="service-detail-text">
+                            <h3 class="service-detail-title">Mantenimiento Preventivo Programado</h3>
+                            <p class="service-detail-description">
+                                Implementación de programas de mantenimiento preventivo con cronogramas personalizados según el tipo de equipo, frecuencia de uso y condiciones operativas. Realizamos inspecciones periódicas, limpieza profunda, lubricación, ajustes y reemplazo de componentes antes de que fallen, evitando paros no programados y costosas reparaciones.
+                            </p>
+                            <ul class="service-detail-features">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Inspecciones programadas según fabricante
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Limpieza, lubricación y ajustes preventivos
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Reemplazo de componentes desgastados
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Bitácora digital de mantenimientos realizados
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="../assets/images/imagen.webp" alt="Mantenimiento Preventivo Programado" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Service Detail Item 2 -->
+                <div class="service-detail-item">
+                    <div class="service-detail-content">
+                        <div class="service-detail-number">02</div>
+                        <div class="service-detail-text">
+                            <h3 class="service-detail-title">Mantenimiento Correctivo y Reparaciones</h3>
+                            <p class="service-detail-description">
+                                Servicio de reparación inmediata para equipos dañados o con fallas operativas. Nuestros técnicos diagnostican el problema, consiguen refacciones originales o equivalentes certificadas y restauran la funcionalidad completa del equipo. Garantizamos nuestras reparaciones y entregamos certificado de operatividad tras cada intervención correctiva.
+                            </p>
+                            <ul class="service-detail-features">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Diagnóstico técnico especializado
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Refacciones originales o certificadas
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Reparación con garantía de servicio
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Pruebas de funcionamiento post-reparación
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="../assets/images/imagen.webp" alt="Mantenimiento Correctivo y Reparaciones" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Service Detail Item 3 -->
+                <div class="service-detail-item">
+                    <div class="service-detail-content">
+                        <div class="service-detail-number">03</div>
+                        <div class="service-detail-text">
+                            <h3 class="service-detail-title">Calibración y Pruebas de Funcionamiento</h3>
+                            <p class="service-detail-description">
+                                Realizamos calibración profesional de equipos de medición, detección y protección según estándares del fabricante. Incluye pruebas de carga para líneas de vida y arneses, verificación de sensores en detectores de gas, calibración de extintores y pruebas funcionales de todo el equipamiento crítico de seguridad con certificación oficial.
+                            </p>
+                            <ul class="service-detail-features">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Calibración con equipos certificados
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Pruebas de carga en sistemas anticaídas
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Verificación de detectores y alarmas
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Certificados de calibración vigentes
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="../assets/images/imagen.webp" alt="Calibración y Pruebas de Funcionamiento" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Service Detail Item 4 -->
+                <div class="service-detail-item">
+                    <div class="service-detail-content">
+                        <div class="service-detail-number">04</div>
+                        <div class="service-detail-text">
+                            <h3 class="service-detail-title">Inspección y Evaluación de Condiciones</h3>
+                            <p class="service-detail-description">
+                                Evaluación completa del estado actual de tus equipos de seguridad con reportes detallados de condiciones, vida útil remanente y recomendaciones de acción. Identificamos equipos que requieren servicio inmediato, aquellos próximos a mantenimiento y los que deben ser dados de baja por seguridad. Incluye inventario actualizado y etiquetado de equipos.
+                            </p>
+                            <ul class="service-detail-features">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Inspección visual y funcional completa
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Evaluación de vida útil remanente
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Inventario y etiquetado de equipos
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Reporte con recomendaciones prioritarias
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="../assets/images/imagen.webp" alt="Inspección y Evaluación de Condiciones" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Service Detail Item 5 -->
+                <div class="service-detail-item">
+                    <div class="service-detail-content">
+                        <div class="service-detail-number">05</div>
+                        <div class="service-detail-text">
+                            <h3 class="service-detail-title">Documentación y Certificación de Mantenimiento</h3>
+                            <p class="service-detail-description">
+                                Generación de toda la documentación técnica requerida por normativas NOM-STPS y auditorías de seguridad. Entregamos bitácoras firmadas por técnicos certificados, certificados de mantenimiento con validez oficial, etiquetas de identificación con fechas de próximo servicio y respaldo digital de todo el historial de mantenimientos realizados.
+                            </p>
+                            <ul class="service-detail-features">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Bitácoras de mantenimiento firmadas
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Certificados con validez oficial
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Etiquetas de identificación y fechas
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Historial digital completo
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="../assets/images/imagen.webp" alt="Documentación y Certificación de Mantenimiento" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Service Detail Item 6 -->
+                <div class="service-detail-item">
+                    <div class="service-detail-content">
+                        <div class="service-detail-number">06</div>
+                        <div class="service-detail-text">
+                            <h3 class="service-detail-title">Planes de Mantenimiento Anual</h3>
+                            <p class="service-detail-description">
+                                Diseño e implementación de programas de mantenimiento anual adaptados a tu operación. Incluye cronograma de visitas programadas, alertas automáticas de próximos servicios, prioridad en atención de emergencias, descuentos en refacciones y servicios, y administrador de cuenta dedicado que coordina todas las intervenciones con mínima interrupción de tus operaciones.
+                            </p>
+                            <ul class="service-detail-features">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Cronograma anual personalizado
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Alertas automáticas de servicios
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Prioridad en atención de emergencias
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Administrador de cuenta dedicado
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="../assets/images/imagen.webp" alt="Planes de Mantenimiento Anual" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Section -->
+        <section class="why-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">¿Por qué elegir nuestro servicio de mantenimiento?</h2>
+                    <p class="section-subtitle">Experiencia técnica y compromiso con la seguridad</p>
+                </div>
+                <div class="why-content why-grid">
+                    <div class="why-item">
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="why-text">
+                            <h3>Técnicos Certificados</h3>
+                            <p>Nuestro equipo cuenta con certificaciones de fabricantes y organismos oficiales, con experiencia en mantenimiento de equipos de todas las marcas y modelos del mercado.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-item">
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="why-text">
+                            <h3>Servicio Rápido</h3>
+                            <p>Respondemos en menos de 24 horas a solicitudes de mantenimiento correctivo. Mantenemos inventario de refacciones comunes para reparaciones inmediatas sin tiempos de espera.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-item">
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="why-text">
+                            <h3>Documentación Completa</h3>
+                            <p>Generamos toda la documentación oficial requerida por normativas y auditorías: bitácoras, certificados, etiquetas y respaldo digital del historial completo de mantenimientos.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-item">
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="why-text">
+                            <h3>Garantía de Servicio</h3>
+                            <p>Respaldamos todos nuestros servicios de mantenimiento con garantía. Si un equipo presenta fallas después del servicio, regresamos sin costo adicional para resolverlo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info Section -->
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="contact-two-columns">
+                    <!-- Columna 1: Información del Servicio -->
+                    <div class="contact-column-info">
+                        <h2 class="contact-info-title">Mantenimiento SEIND</h2>
+                        <p class="contact-info-description">
+                            Nuestro equipo de técnicos certificados está listo para mantener tus equipos de seguridad en óptimas condiciones. Ofrecemos planes de mantenimiento preventivo, reparaciones correctivas, calibraciones y toda la documentación oficial que necesitas.
+                        </p>
+
+                        <div class="contact-info-items">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="contact-info-content">
+                                    <h4>Evaluación Sin Costo</h4>
+                                    <p>Inspección inicial gratuita de tus equipos<br>Diagnóstico y presupuesto sin compromiso</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div class="contact-info-content">
+                                    <h4>Servicio de Emergencia</h4>
+                                    <p><a href="tel:+525512345678">+52 55 1234 5678</a><br>Atención prioritaria para reparaciones urgentes</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact-info-content">
+                                    <h4>Cotización Rápida</h4>
+                                    <p><a href="mailto:mantenimiento@seind.com.mx">mantenimiento@seind.com.mx</a><br>Propuesta detallada en 24 horas</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="contact-info-content">
+                                    <h4>Servicio en Sitio</h4>
+                                    <p>Mantenimiento en tus instalaciones<br>Cobertura en toda la República Mexicana</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-features">
+                            <h3>¿Qué equipos mantenemos?</h3>
+                            <ul>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Sistemas de protección contra caídas
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Equipos de protección respiratoria
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Extintores y sistemas contra incendios
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    Detectores de gas y monitoreo ambiental
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Formulario de Contacto -->
+                    <div class="contact-column-form">
+                        <div class="contact-form-wrapper">
+                            <h3 class="contact-form-title">Solicita tu servicio de mantenimiento</h3>
+                            <p class="contact-form-subtitle">Completa el formulario y nos pondremos en contacto contigo por WhatsApp</p>
+
+                            <form id="contactForm" class="contact-form">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre completo *</label>
+                                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="empresa">Empresa *</label>
+                                    <input type="text" id="empresa" name="empresa" required placeholder="Nombre de tu empresa">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono / WhatsApp *</label>
+                                    <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 55 1234 5678">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Correo electrónico *</label>
+                                    <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="interes">¿Qué tipo de servicio necesitas? *</label>
+                                    <select id="interes" name="interes" required>
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
+                                        <option value="Reparación de Equipo">Reparación de Equipo</option>
+                                        <option value="Calibración y Pruebas">Calibración y Pruebas</option>
+                                        <option value="Inspección de Equipos">Inspección de Equipos</option>
+                                        <option value="Plan Anual de Mantenimiento">Plan Anual de Mantenimiento</option>
+                                        <option value="Servicio de Emergencia">Servicio de Emergencia</option>
+                                        <option value="Evaluación de Equipos">Evaluación de Equipos</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="mensaje">Describe los equipos y el servicio que necesitas *</label>
+                                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Indica el tipo de equipos (arneses, detectores, extintores, etc.), cantidad aproximada, problema o necesidad de mantenimiento..."></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg btn-whatsapp-submit">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                    </svg>
+                                    Enviar por WhatsApp
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section class="faqs-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Preguntas Frecuentes sobre Mantenimiento</h2>
+                    <p class="section-subtitle">Resuelve tus dudas sobre nuestros servicios de mantenimiento</p>
+                </div>
+
+                <div class="faqs-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Con qué frecuencia debo realizar mantenimiento a mis equipos de seguridad?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>La frecuencia depende del tipo de equipo y su uso. En general, los arneses y líneas de vida requieren inspección cada 6 meses, los detectores de gas cada 3-6 meses según exposición, y los extintores requieren mantenimiento anual. Equipos de alto uso crítico pueden requerir revisiones trimestrales. Creamos planes personalizados considerando las especificaciones del fabricante, normativas aplicables y tu operación específica.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Qué diferencia hay entre mantenimiento preventivo y correctivo?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>El mantenimiento preventivo son revisiones programadas para evitar fallas, incluyendo limpieza, lubricación, ajustes y reemplazo de componentes desgastados antes de que fallen. El mantenimiento correctivo es la reparación de equipos que ya presentan fallas o daños. El preventivo es más económico a largo plazo, evita paros no programados y extiende la vida útil del equipamiento.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Los servicios incluyen las refacciones necesarias?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Los servicios de mantenimiento preventivo incluyen ajustes, limpieza y lubricación. Las refacciones necesarias (como componentes dañados, sellos, filtros de repuesto, etc.) se cotizan por separado antes de realizar el cambio. En mantenimiento correctivo, el diagnóstico inicial está incluido y luego cotizamos las refacciones requeridas. Usamos siempre refacciones originales o equivalentes certificadas.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Ofrecen garantía en sus servicios de mantenimiento?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, todos nuestros servicios de mantenimiento incluyen garantía de 90 días en mano de obra. Si un equipo presenta problemas relacionados con el servicio realizado dentro de este periodo, regresamos sin costo adicional. Las refacciones instaladas tienen la garantía del fabricante. Documentamos todo el trabajo realizado para respaldo completo.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Pueden realizar el mantenimiento en nuestras instalaciones?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, realizamos servicios de mantenimiento directamente en tus instalaciones para minimizar interrupciones en tu operación. Llevamos herramientas, equipos de prueba y refacciones comunes. Para servicios que requieren equipo especializado (como calibraciones complejas), podemos llevarnos el equipo a nuestro taller certificado y entregarlo en 24-48 horas con toda la documentación oficial.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Qué documentación recibo después del servicio?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Entregamos documentación completa: bitácora de mantenimiento firmada por técnico certificado, certificado de servicio con validez oficial, etiquetas de identificación con fecha del servicio y próxima revisión, reporte fotográfico cuando aplique, y respaldo digital del historial. Esta documentación es válida para auditorías e inspecciones STPS.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Cómo funciona el plan de mantenimiento anual?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>El plan anual incluye un número determinado de visitas programadas según tus equipos y necesidades. Diseñamos un cronograma anual, te enviamos alertas automáticas antes de cada servicio, tienes prioridad en atención de emergencias, descuentos en refacciones y servicios adicionales, y un administrador de cuenta que coordina todo. Es la forma más económica y efectiva de mantener tus equipos siempre en condiciones óptimas.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Atienden equipos de cualquier marca?</span>
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, nuestros técnicos tienen experiencia con equipos de todas las marcas comercializadas en México. Contamos con capacitación de fabricantes principales y seguimos los manuales técnicos de cada marca. Mantenemos contacto directo con proveedores para conseguir refacciones originales cuando se requieren. Si es un equipo muy especializado, coordinamos con el fabricante para garantizar el servicio correcto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">¿Necesitas mantener tus equipos de seguridad?</h2>
+                    <p class="cta-description">
+                        Solicita una evaluación sin costo y recibe un plan de mantenimiento personalizado para tus equipos.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20interesa%20solicitar%20un%20servicio%20de%20mantenimiento%20para%20equipos%20de%20seguridad%20industrial" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component - SEIND -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Columna 1: Sobre SEIND -->
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <h2 class="footer-logo-text">SEIND</h2>
+                        </div>
+                        <p class="footer-description">
+                            Especialistas en equipos de seguridad industrial certificados. Protegemos lo más valioso: tu equipo de trabajo.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" target="_blank" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" target="_blank" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" target="_blank" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                                </svg>
+                            </a>
+                            <a href="https://wa.me/5215512345678" target="_blank" aria-label="WhatsApp">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Productos -->
+                    <div class="footer-col">
+                        <h4 class="footer-title">Productos</h4>
+                        <ul class="footer-links">
+                            <li><a href="../productos/proteccion-personal.html">Protección Personal</a></li>
+                            <li><a href="../productos/prevencion-caidas.html">Prevención de Caídas</a></li>
+                            <li><a href="../productos/senalizacion.html">Señalización</a></li>
+                            <li><a href="../productos/contra-incendios.html">Contra Incendios</a></li>
+                            <li><a href="../productos/soluciones-tecnologicas.html">Soluciones Tecnológicas</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna 3: Servicios -->
+                    <div class="footer-col">
+                        <h4 class="footer-title">Servicios</h4>
+                        <ul class="footer-links">
+                            <li><a href="../servicios/proteccion-personal.html">Protección Personal</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna 4: Servicios Especializados -->
+                    <div class="footer-col">
+                        <h4 class="footer-title">Servicios Especializados</h4>
+                        <ul class="footer-links">
+                            <li><a href="asesoria.html">Asesoría en Seguridad</a></li>
+                            <li><a href="capacitacion.html">Capacitación</a></li>
+                            <li><a href="mantenimiento.html">Mantenimiento</a></li>
+                            <li><a href="instalacion.html">Instalación</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna 5: Contacto -->
+                    <div class="footer-col">
+                        <h4 class="footer-title">Contacto</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Ciudad de México, México</span>
+                            </li>
+                            <li>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <a href="tel:+525512345678">+52 55 1234 5678</a>
+                            </li>
+                            <li>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <a href="mailto:contacto@seind.com.mx">contacto@seind.com.mx</a>
+                            </li>
+                            <li>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Lun - Vie: 9:00 - 18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; 2024 SEIND - Seguridad Industrial. Todos los derechos reservados.
+                    </p>
+                    <ul class="footer-legal">
+                        <li><a href="../privacidad.html">Aviso de Privacidad</a></li>
+                        <li><a href="../terminos.html">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
