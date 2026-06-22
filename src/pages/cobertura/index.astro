@@ -1,0 +1,84 @@
+---
+// ============================================================================
+// /cobertura/ — Landing de Cobertura (zonas atendidas).
+// ----------------------------------------------------------------------------
+// Lista las zonas desde COVERAGE_STATES (TAXONOMY en site.ts, SSoT) — la misma
+// fuente del dropdown «Cobertura» del Header. Cada tarjeta enlaza a su detalle
+// /cobertura/<slug>, generado por [...slug].astro. SEO local. Datos DEMO.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import Hero from '@components/Hero.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import CategoryCard from '@components/CategoryCard.astro'
+import SectionMenu from '@components/SectionMenu.astro'
+import { COVERAGE_STATES, waUrl, WA_MESSAGES } from '@config/site'
+
+const cierreItems = [
+  { label: 'Servicios', href: '/servicios', sub: 'Lo que ofrecemos' },
+  { label: 'Productos', href: '/productos', sub: 'Catálogo del sitio' },
+  { label: 'Contacto', href: '/contacto', sub: '¿Estás en otra zona?' },
+  { label: 'Inicio', href: '/', sub: 'Volver a la home' },
+]
+const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotizar), sub: 'Respuesta inmediata', external: true }
+
+const tipoLabel = (t: string) => (t === 'operativo' ? 'Operativo' : 'Comercial')
+---
+
+<PageLayout
+  title="Cobertura"
+  description="Zonas que atendemos: cobertura por ciudad y estado, cada una con su página de detalle. Cotiza por WhatsApp."
+  pageType="category"
+  breadcrumbs={[{ label: 'Cobertura' }]}
+  guia={false}
+>
+  <Hero
+    badge="Categoría · Cobertura"
+    title="Dónde"
+    accent="atendemos"
+    subtitle="Las zonas donde damos servicio, cada una con su página propia, para que sepas si llegamos a donde estás."
+    descRight={[
+      'Atendemos varias zonas y cada una tiene su página, con su nombre y sus datos. Así puedes ver si llegamos a tu ubicación y qué incluye el servicio en tu área.',
+      'Distinguimos zona operativa (servicio directo) de comercial (atención a distancia). ¿No ves tu zona? Escríbenos y te confirmamos cobertura y tiempos.',
+    ]}
+  />
+
+  <section class="section">
+    <div class="container">
+      
+
+      <SectionHeading
+        layout="duo"
+        eyebrow="Las zonas"
+        title="Una página por ubicación"
+        desc="Cada zona con su propia URL, su nombre y sus datos: así se posiciona el SEO local de verdad."
+        body={[
+          'Cuando un negocio atiende varias ubicaciones, la tentación es listarlas todas en una sola página. Pero el buscador premia la página específica: "servicio en CDMX" rankea mejor con una página dedicada a CDMX que con un párrafo perdido entre veinte ciudades. Una zona, una página, una intención.',
+          'Por eso cada tarjeta de abajo abre una página de zona con su contenido propio. Mantenerlas todas coherentes es fácil porque comparten plantilla y se generan desde la misma fuente de datos; solo cambia el contenido específico de cada ubicación.',
+        ]}
+      />
+
+      <div class="grid">
+        {COVERAGE_STATES.map((z, i) => (
+          <CategoryCard
+            label={z.label}
+            href={`/cobertura/${z.slug}`}
+            blurb={`Cobertura ${tipoLabel(z.type).toLowerCase()} en ${z.label}: alcance, colonias y servicios disponibles en la zona.`}
+            badge={tipoLabel(z.type)}
+            ctaLabel="Ver zona"
+            index={i}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding: var(--sp-8) 0; }
+  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
+  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+</style>

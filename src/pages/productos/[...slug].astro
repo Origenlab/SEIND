@@ -1,0 +1,57 @@
+---
+// Ficha de producto — Nivel L4 (Inicio → Categoría → Ficha)
+// Ruta dinámica ÚNICA: sirve TODAS las fichas de la colección `productos`.
+// No se edita por producto; el contenido sale de src/content/productos/<slug>.md
+// (frontmatter validado con Zod .strict()). Toda la estructura, el JSON-LD
+// Product+Offer, los breadcrumbs y la conversión WhatsApp viven en ProductLayout.
+import { getCollection, render } from 'astro:content';
+import ProductLayout from '@layouts/ProductLayout.astro';
+
+export async function getStaticPaths() {
+  const productos = await getCollection('productos', ({ data }) => !data.draft);
+
+  return productos.map((producto) => {
+    // Interlinking (B6): relacionados = hermanos de la colección (excluye el actual).
+    const related = productos
+      .filter((p) => p.id !== producto.id)
+      .slice(0, 3)
+      .map((p) => ({
+        label: p.data.title,
+        href: `/productos/${p.id}`,
+        description: p.data.description,
+      }));
+
+    return { params: { slug: producto.id }, props: { producto, related } };
+  });
+}
+
+const { producto, related } = Astro.props;
+const { Content } = await render(producto);
+const d = producto.data;
+
+// faqs del esquema → forma canónica {question, answer} (SSoT alineada con schema.org).
+const faqs = d.faqs;
+---
+
+<ProductLayout
+  slug={producto.id}
+  title={d.title}
+  description={d.description}
+  category={d.category}
+  seoTitle={d.seoTitle}
+  seoDescription={d.seoDescription}
+  image={d.image}
+  badge={d.brand}
+  price={d.price}
+  gallery={d.gallery?.map((src) => ({ src, alt: d.title }))}
+  features={d.features}
+  specs={d.specs}
+  applications={d.applications}
+  certifications={d.certifications}
+  faqs={faqs}
+  related={related}
+>
+  
+
+  <Content />
+</ProductLayout>

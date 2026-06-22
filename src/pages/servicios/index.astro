@@ -1,0 +1,82 @@
+---
+// ============================================================================
+// /servicios/ — Landing de Servicios (categoría L2).
+// ----------------------------------------------------------------------------
+// Lista los servicios desde SERVICES (TAXONOMY en site.ts, SSoT) — la MISMA
+// fuente que alimenta el dropdown «Servicios» del Header. Cada tarjeta enlaza a
+// su página de detalle /servicios/<id>, generada por [...slug].astro. Datos DEMO.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import Hero from '@components/Hero.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import CategoryCard from '@components/CategoryCard.astro'
+import SectionMenu from '@components/SectionMenu.astro'
+import { SERVICES, waUrl, WA_MESSAGES } from '@config/site'
+
+const cierreItems = [
+  { label: 'Productos', href: '/productos', sub: 'Catálogo del sitio' },
+  { label: 'Cobertura', href: '/cobertura', sub: 'Zonas que atendemos' },
+  { label: 'Nosotros', href: '/nosotros', sub: 'Cómo trabajamos' },
+  { label: 'Contacto', href: '/contacto', sub: 'Hablemos de tu proyecto' },
+]
+const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.servicios), sub: 'Respuesta inmediata', external: true }
+---
+
+<PageLayout
+  title="Servicios"
+  description="Nuestros servicios: lo que ofrecemos, cada uno con su página de detalle. Cotiza por WhatsApp y recibe una recomendación honesta."
+  pageType="category"
+  breadcrumbs={[{ label: 'Servicios' }]}
+  guia={false}
+>
+  <Hero
+    badge="Categoría · Servicios"
+    title="Lo que"
+    accent="ofrecemos"
+    subtitle="Del primer contacto a la entrega y el seguimiento: te acompañamos en cada etapa, con trato directo y claridad."
+    descRight={[
+      'Estos son nuestros servicios. Cada uno es una puerta de entrada: entra al que te interesa y conoce el detalle —qué incluye, cómo se trabaja y qué resultado esperar.',
+      'Si no sabes cuál necesitas, escríbenos y te orientamos. Te recomendamos el servicio correcto según tu caso, sin venderte de más.',
+    ]}
+  />
+
+  <section class="section">
+    <div class="container">
+      
+
+      <SectionHeading
+        layout="duo"
+        eyebrow="Nuestros servicios"
+        title="Cómo te ayudamos"
+        desc="Cada servicio con un resultado claro: entra al que necesitas y conoce el detalle."
+        body={[
+          'Un buen catálogo de servicios no enumera tareas: ordena la decisión del cliente. Cada servicio se presenta con un resultado claro, para que identifiques cuál necesitas y qué sigue.',
+          'Cada tarjeta lleva a una página de detalle con lo que incluye, cómo se trabaja y las preguntas frecuentes. Quien necesita más información, la encuentra a un clic.',
+        ]}
+      />
+
+      <div class="grid">
+        {SERVICES.map((s, i) => (
+          <CategoryCard
+            label={s.label}
+            href={`/servicios/${s.id}`}
+            blurb={s.desc}
+            badge="Servicio"
+            ctaLabel="Ver detalle"
+            index={i}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding: var(--sp-8) 0; }
+  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
+  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(3, 1fr); } }
+</style>

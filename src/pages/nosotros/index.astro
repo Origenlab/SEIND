@@ -1,0 +1,98 @@
+---
+// ============================================================================
+// /nosotros/ — Página "Nosotros" (acerca de).
+// Página estática con PageLayout. Presenta la empresa, su forma de trabajar y sus
+// principios. Contenido DEMO de la plantilla; identidad desde SITE (site.ts).
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import Hero from '@components/Hero.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import SectionMenu from '@components/SectionMenu.astro'
+import { waUrl, WA_MESSAGES } from '@config/site'
+
+// Principios — data-driven (grid de valores). Reales del sector SEIND.
+const principios = [
+  { t: 'Seguridad ante todo', d: 'Trabajamos para proteger la vida y salud de las personas: ese es el valor que guía cada recomendación.' },
+  { t: 'Equipo certificado', d: 'Solo productos que cumplen las normas NOM-STPS, ANSI, CE e ISO, con su respaldo documental.' },
+  { t: 'Asesoría honesta', d: 'Te recomendamos el equipo adecuado a los riesgos de tu operación, en lenguaje claro y sin venderte de más.' },
+  { t: 'Trato directo', d: 'Hablas con quien conoce el producto, no con un intermediario. Respuesta directa por WhatsApp.' },
+]
+
+const cierreItems = [
+  { label: 'Servicios', href: '/servicios', sub: 'Cómo te ayudamos' },
+  { label: 'Productos', href: '/productos', sub: 'Catálogo del sitio' },
+  { label: 'Contacto', href: '/contacto', sub: 'Hablemos de tu proyecto' },
+  { label: 'Inicio', href: '/', sub: 'Volver a la home' },
+]
+const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotizar), sub: 'Respuesta inmediata', external: true }
+---
+
+<PageLayout
+  title="Nosotros — quiénes somos"
+  description="Quiénes somos: cómo trabajamos y en qué creemos. Asesoría honesta, cumplimiento de lo prometido y trato directo con cada cliente."
+  pageType="page"
+  breadcrumbs={[{ label: 'Nosotros' }]}
+  guia={false}
+>
+  <Hero
+    badge="Quiénes somos"
+    title="Detrás de"
+    accent="cada trabajo"
+    subtitle="No improvisamos: cada trabajo sigue un método claro, del primer contacto a la entrega, para darte un resultado que cumple lo prometido."
+    descRight={[
+      'Antes de contratar conviene saber quién está detrás y cómo trabaja. Aquí te lo contamos sin rodeos: un equipo con un método, no improvisación, para que sepas qué esperar y por qué puedes confiar.',
+      'Creemos en la asesoría honesta, el cumplimiento y el trato directo. Resolvemos lo que necesitas con claridad, te lo explicamos en lenguaje sencillo y respondemos por el trabajo que hacemos.',
+    ]}
+  />
+
+  <section class="section">
+    <div class="container">
+      
+
+      <SectionHeading
+        layout="duo"
+        eyebrow="Cómo trabajamos"
+        title="Método, no improvisación"
+        desc="Un proceso claro que va de tu necesidad al trabajo entregado, sin sorpresas."
+        body={[
+          'Empezamos por entender qué necesitas y para qué. Con eso definimos el alcance, los tiempos y el costo antes de empezar, para que no haya sorpresas a mitad del camino.',
+          'Ejecutamos con un proceso probado y comunicación clara en cada paso. Al terminar, te entregamos el trabajo y el soporte que lo respalda.',
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        eyebrow="En qué creemos"
+        title="Los principios que guían el"
+        titleAccent="trabajo"
+        desc="Cuatro convicciones que se notan en cómo atendemos a cada cliente."
+      />
+      <div class="principios">
+        {principios.map((p) => (
+          <article class="principio">
+            <h3 class="principio__t">{p.t}</h3>
+            <p class="principio__d">{p.d}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+
+  .principios { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); margin-top: var(--sp-6); }
+  @media (min-width: 640px)  { .principios { grid-template-columns: repeat(2, 1fr); } }
+  .principio { padding: var(--sp-5); background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-lg); }
+  .principio__t { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--c-ink); margin: 0 0 var(--sp-2); }
+  .principio__d { font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--c-ink-2); margin: 0; }
+</style>
